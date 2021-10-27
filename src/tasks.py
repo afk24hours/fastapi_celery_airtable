@@ -6,8 +6,9 @@ import random
 import requests
 from bs4 import BeautifulSoup
 
-app = Celery('tasks', broker='pyamqp://guest@localhost//')
+app = Celery('tasks',)
 
+app.conf.broker_url = os.environ.get('CLOUDAMQP_URL')
 app.conf.beat_schedule = {
     'add-quotes-every-60-seconds': {
         'task': 'tasks.parse_and_publish',
