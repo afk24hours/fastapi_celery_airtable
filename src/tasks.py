@@ -1,5 +1,5 @@
 from celery import Celery
-from airtable import push
+from .airtable import push
 from datetime import timedelta
 import random
 
