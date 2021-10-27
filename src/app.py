@@ -3,8 +3,8 @@ import os
 import pathlib
 from fastapi import FastAPI, Form, Request
 from fastapi.templating import Jinja2Templates
-from airtable import push, get
-from tasks import parse_and_publish
+from .airtable import push, get
+from .tasks import parse_and_publish
 
 BASE_DIR = pathlib.Path(__file__).parent
 
